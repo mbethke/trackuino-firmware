@@ -297,6 +297,7 @@ bool gps_decode(char c)
           gps_speed = new_speed;
           gps_altitude = new_altitude;
           ret = true;
+          Serial.print('*');
         }
       }
 #ifdef DEBUG_GPS

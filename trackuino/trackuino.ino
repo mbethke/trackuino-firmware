@@ -44,6 +44,7 @@
 #include "power.h"
 #include "sensors_avr.h"
 #include "sensors_pic32.h"
+#include "sdof.h"
 
 // Arduino/AVR libs
 #if (ARDUINO + 1) >= 100
@@ -73,6 +74,7 @@ void setup()
   afsk_setup();
   gps_setup();
   sensors_setup();
+  lsm9ds0_setup();
 
 #ifdef DEBUG_SENS
   Serial.print("Ti=");
@@ -99,6 +101,7 @@ void setup()
   }  
   // TODO: beep while we get a fix, maybe indicating the number of
   // visible satellites by a series of short beeps?
+  Serial.print("setup done\n");
 }
 
 void get_pos()

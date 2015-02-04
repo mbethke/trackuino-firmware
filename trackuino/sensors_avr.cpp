@@ -62,9 +62,7 @@ unsigned long sensors_aref()
 
   return result;
 }
-#endif
-
-#ifndef USE_AREF
+#else
 void sensors_setup()
 {
   pinMode(INTERNAL_LM60_VS_PIN, OUTPUT);
@@ -134,6 +132,5 @@ int sensors_vin()
   return vin;
 }
 
-
-#endif
+#endif // USE_AREF
 #endif // ifdef AVR
